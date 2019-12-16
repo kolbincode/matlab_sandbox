@@ -44,6 +44,8 @@ name_cell = strsplit(dir_in, filesep);
 basename = name_cell{end};
 % determine number of z planes
 z_num = max(z_array);
+% parse only mid-z-plane
+mid_z = ceil(z_num/2);
 parfor c = 1:unique(c_array)
     for n = 1:numel(files)
         if c == trans_ch
@@ -51,7 +53,7 @@ parfor c = 1:unique(c_array)
             z_cell = strsplit(name_cell{end}, '.');
             num_cell = strsplit(z_cell{1}, 'z');
             z = str2double(strip(num_cell{2}, 'left', '0'));
-            if z == z_num
+            if z == mid_z
                 im_mat = imread(fullfile(files(n).folder, files(n).name), c);
                 if n == 1
                     imwrite(im_mat, sprintf('%s%s%s_ch%d.tif', dir_out, filesep, basename, c), 'tiff');

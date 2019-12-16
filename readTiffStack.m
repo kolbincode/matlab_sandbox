@@ -11,4 +11,3 @@ for n = 1:numImages
     imMat(:,:,n) = imread(filename, n);
 end
 end
-
