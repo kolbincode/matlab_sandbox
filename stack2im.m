@@ -20,5 +20,5 @@ for n = 1:size(stk, 3)
     elseif n < 1000
         lead_string = '0';
     end
-    imwrite(stk(:,:,n), sprintf('%s%stile_%s%d.tif', directory, filesep, lead_string, n), 'tiff');
+    imwrite(stk(:,:,n), sprintf('%s%stile_%s%d.tif', directory, filesep, lead_string, n), 'tif');
 end

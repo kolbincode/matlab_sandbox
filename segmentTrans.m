@@ -58,7 +58,7 @@ for n = 1:numel(out_files)
         [rows, cols] = ind2sub(size(im_mat), lin_idxs);
         crop = im_mat(min(rows):max(rows), min(cols):max(cols));
         binary = crop == i;
-        binaryYX = [min(cols), min(rows)];
+        binaryYX = [min(rows), min(cols)];
         image_struct(cnt).tile_idx = n;
         image_struct(cnt).binary = binary;
         image_struct(cnt).binaryYX = binaryYX;
