@@ -9,6 +9,7 @@ function S_filter = int_filter(S, channels)
 %       channels : A cell array specifying the names of the channels to
 %       filter.
 %
+%
 %% Parse fluorescent images
 % pre-allocate index matrix
 idxs = zeros([numel(S), numel(channels)]);
